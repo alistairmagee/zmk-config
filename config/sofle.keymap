@@ -84,7 +84,7 @@
 &trans       &trans   &trans   &trans   &trans   &kp LBRC                                  &kp RBRC     &kp KP_N7      &kp KP_N8       &kp KP_N9        &kp KP_PLUS   &kp COLON
 &to DEFAULT  &trans   &trans   &trans   &trans   &kp LPAR                                  &kp RPAR     &kp KP_N4      &kp KP_N5       &kp KP_N6        &kp KP_PLUS   &kp SEMI
 &trans       &trans   &trans   &trans   &trans   &kp LBKT    &trans                        &kp RBKT     &kp KP_N1      &kp KP_N2       &kp KP_N3        &kp KP_PLUS   &trans
-                      &trans   &trans   &trans   &to DEFAULT &to DEFAULT   &kp KP_ENTER   &kp SPACE     &KP_N0         &kp KP_DOT      &kp KP_COMMA
+                      &trans   &trans   &trans   &to DEFAULT &to DEFAULT   &kp KP_ENTER    &kp SPACE    &kp KP_N0      &kp KP_DOT      &kp KP_COMMA
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
