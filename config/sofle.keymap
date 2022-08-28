@@ -56,7 +56,7 @@
 &kp TAB   &kp Q  &kp W      &kp E    &kp R     &kp T                         &kp Y    &kp U       &kp I     &kp O     &kp P    &kp BSLH
 &kp ESC   &kp A  &kp S      &kp D    &kp F     &kp G                         &kp H    &kp J       &kp K     &kp L     &kp SEMI &kp SQT
 &kp LSHFT &kp Z  &kp X      &kp C    &kp V     &kp B    &kp C_MUTE  &none    &kp N    &kp M       &kp COMMA &kp DOT   &kp FSLH &mt RSHFT RET
-                 &kp LCTRL  &kp LALT &kp LGUI  &td_lb   &mo LOWER   &td_rb   &td_rs   &tog NUMPAD &kp RALT  &kp RCTRL
+                 &kp LCTRL  &kp LALT &kp LGUI  &td_lb   &mo LOWER   &td_rb   &td_rs   &to NUMPAD  &kp RALT  &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -111,7 +111,7 @@
 &trans     &none    &none    &none    &none    &kp LBRC                                  &kp RBRC     &kp KP_N7      &kp KP_N8       &kp KP_N9        &kp KP_PLUS   &kp COLON
 &trans     &none    &none    &none    &none    &kp LPAR                                  &kp RPAR     &kp KP_N4      &kp KP_N5       &kp KP_N6        &kp KP_PLUS   &kp SEMI
 &trans     &none    &none    &none    &none    &kp LBKT    &trans        &trans          &kp RBKT     &kp KP_N1      &kp KP_N2       &kp KP_N3        &kp KP_PLUS   &trans 
-                    &trans   &trans   &trans   &tog NUMPAD &tog NUMPAD   &kp trans       &trans       &kp KP_N0      &kp KP_DOT      &kp KP_COMMA
+                    &trans   &trans   &trans   &to DEFAULT &to DEFAULT   &trans          &trans       &kp KP_N0      &kp KP_DOT      &kp KP_COMMA
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
