@@ -19,7 +19,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_RIGHT_SPACE";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&mt RSHFT SPACE>, <&lt RAISE RET>; 
         };
         
@@ -27,7 +27,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LEFT_BACKSPACE";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&mt LSHFT BSPC>, <&lt NUMPAD DEL>;
         };
         
@@ -35,7 +35,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_RIGHT_BACKSPACE";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&lt LOWER BSPC>, <&kp BSPC>;
         };
     
@@ -83,17 +83,17 @@
 
         raise_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |BTCLR| BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-// |     | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
-// |     | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-// |     | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
-//              |      |       |       | DEL  | BSPC |  |      |      |      |       |      |
+// |BTCLR| BT1  | BT2  |  BT3  |  BT4  |  BT5 |                    |      |      |       |      |       |       |
+// |     | INS  | PSCR | GUI   |       |      |                    | PGUP |      |   ^   |      |       |       |
+// |     | ALT  | CTRL | SHIFT |       | CAPS |                    | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
+// |     | UNDO | CUT  | COPY  | PASTE |      |          |  |      |      |      |       |      |       |       |
+//              |      |       |       | DEL  |SPACE TAP |  |      |      |      |       |      |
             bindings = <
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                     &trans    &trans    &trans   &trans    &trans   &trans
 &trans     &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &trans                           &kp PG_UP &trans    &kp UP   &trans    &kp N0   &trans
 &trans     &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK                         &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL  &kp BSPC
 &trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans       &trans      &trans  &trans    &trans    &trans   &trans    &trans   &trans  
-                        &trans       &trans       &trans       &kp DEL      &kp BSPC    &trans  &trans    &trans    &trans   &trans
+                        &trans       &trans       &trans       &kp DEL      &td_rs      &trans  &trans    &trans    &trans   &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -107,11 +107,11 @@
 // |       |     |     |      |      |   [  |        |  |        |  ]   |  1    |   2   |   3  | ENTER |       |
 //               |     |      |      |DEFAUL|DEFAULT |  |BSPC LWR|SPCENT|  0    |   .   |   ,  |
             bindings = <
-&kp KP_NUM &none    &none    &none    &none    &kp LT                                    &kp GT       &kp KP_MINUS   &kp KP_SLASH    &kp KP_MULTIPLY  &kp KP_MINUS  &trans 
-&trans     &none    &none    &none    &none    &kp LBRC                                  &kp RBRC     &kp KP_N7      &kp KP_N8       &kp KP_N9        &kp KP_PLUS   &kp COLON
-&trans     &none    &none    &none    &none    &kp LPAR                                  &kp RPAR     &kp KP_N4      &kp KP_N5       &kp KP_N6        &kp KP_PLUS   &kp SEMI
-&trans     &none    &none    &none    &none    &kp LBKT    &trans        &trans          &kp RBKT     &kp KP_N1      &kp KP_N2       &kp KP_N3        &kp KP_PLUS   &trans 
-                    &trans   &trans   &trans   &to DEFAULT &to DEFAULT   &trans          &trans       &kp KP_N0      &kp KP_DOT      &kp KP_COMMA
+&kp KP_NUM &none    &none    &none     &none     &kp LT                                    &kp GT       &kp KP_MINUS   &kp KP_SLASH    &kp KP_MULTIPLY  &kp KP_MINUS  &trans 
+&trans     &none    &none    &kp EQUAL &kp EQUAL &kp LBRC                                  &kp RBRC     &kp KP_N7      &kp KP_N8       &kp KP_N9        &kp KP_PLUS   &kp COLON
+&trans     &none    &none    &kp UNDER &kp minus &kp LPAR                                  &kp RPAR     &kp KP_N4      &kp KP_N5       &kp KP_N6        &kp KP_PLUS   &kp SEMI
+&trans     &none    &none    &none     &none     &kp LBKT    &trans        &trans          &kp RBKT     &kp KP_N1      &kp KP_N2       &kp KP_N3        &kp KP_PLUS   &trans 
+                    &trans   &trans    &trans    &to DEFAULT &to DEFAULT   &trans          &trans       &kp KP_N0      &kp KP_DOT      &kp KP_COMMA
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
