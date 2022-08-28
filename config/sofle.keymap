@@ -17,7 +17,7 @@
     behaviors {
         td_rs: tap_dance_right_space{
             compatible = "zmk, behaviour-tap-dance";
-            label = TAP_DANCE_RIGHT_SPACE";
+            label = "TAP_DANCE_RIGHT_SPACE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&mt RSHFT SPACE>, <&lt RAISE RET>; 
@@ -25,7 +25,7 @@
         
         td_lb: tap_dance_left_backspace{
             compatible = "zmk, behaviour-tap-dance";
-            label = TAP_DANCE_LEFT_BACKSPACE";
+            label = "TAP_DANCE_LEFT_BACKSPACE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&mt LSHFT BKSPC>, <&lt NUMPAD DEL>;
@@ -33,7 +33,7 @@
         
         td_rb: tap_dance_right_backspace{
             compatible = "zmk, behaviour-tap-dance";
-            label = TAP_DANCE_RIGHT_BACKSPACE";
+            label = "TAP_DANCE_RIGHT_BACKSPACE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&lt LOWER BSPC>, <&kp BSPC>;
