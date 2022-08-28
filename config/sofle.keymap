@@ -16,7 +16,7 @@
 / {
     behaviors {
         td_rs: tap_dance_right_space{
-            compatible = "zmk, behaviour-tap-dance";
+            compatible = "zmk, behavior-tap-dance";
             label = "TAP_DANCE_RIGHT_SPACE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
@@ -24,7 +24,7 @@
         };
         
         td_lb: tap_dance_left_backspace{
-            compatible = "zmk, behaviour-tap-dance";
+            compatible = "zmk, behavior-tap-dance";
             label = "TAP_DANCE_LEFT_BACKSPACE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
@@ -32,7 +32,7 @@
         };
         
         td_rb: tap_dance_right_backspace{
-            compatible = "zmk, behaviour-tap-dance";
+            compatible = "zmk, behavior-tap-dance";
             label = "TAP_DANCE_RIGHT_BACKSPACE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
