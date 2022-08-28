@@ -19,7 +19,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_RIGHT_SPACE";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <180>;
             bindings = <&mt RSHFT SPACE>, <&lt RAISE RET>; 
         };
         
@@ -27,7 +27,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LEFT_BACKSPACE";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <180>;
             bindings = <&mt LSHFT BSPC>, <&lt NUMPAD DEL>;
         };
         
@@ -35,7 +35,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_RIGHT_BACKSPACE";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <180>;
             bindings = <&lt LOWER BSPC>, <&kp BSPC>;
         };
     
