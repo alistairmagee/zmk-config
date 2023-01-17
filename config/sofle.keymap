@@ -68,6 +68,8 @@
 &kp LSHFT &kp Z  &kp X      &kp C    &kp V     &kp B    &kp C_MUTE       &none    &kp N            &kp M       &kp COMMA &kp DOT   &kp FSLH &mt RSHFT RET
                  &kp LCTRL  &kp LALT &kp LGUI  &td_ls   &td_ll           &td_rr   &td_rs           &tog NUMPAD &kp RALT  &kp RCTRL
             >;
+           
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 
         };
 
@@ -111,7 +113,7 @@
         raise_layer {
 // ------------------------------------------------------------------------------------------------------------
 // |BTCLR |  BT1  | BT2  |  BT3  |  BT4  |  BT5 |                    |      |      |       |      |       |       |
-// |      |  INS  | PSCR | GUI   |       |      |                    | PGUP | HOME |   ^   |      |  END  |       |
+// |      |  INS  | PSCR | GUI   |       |      |                    | PGUP | HOME |   ^   | END  |       |       |
 // |DVORAK|  ALT  | CTRL | SHIFT |       | CAPS |                    | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
 // |      |  UNDO | CUT  | COPY  | PASTE |      |          |  |      |      |      |       |      |       |       |
 //              |      |       |       | DEL  | BSPC       |  |      |      |      |       |      |
