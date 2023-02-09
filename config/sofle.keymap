@@ -113,13 +113,13 @@
         raise_layer {
 // ------------------------------------------------------------------------------------------------------------
 // |BTCLR |  BT1  | BT2  |  BT3  |  BT4  |  BT5 |                    |      |      |       |      |       |       |
-// |      |  INS  | PSCR | REDO  | MENU  |      |                    | PGUP | HOME |   ^   | END  |       |       |
+// |      |  INS  | PSCR | MENU  | REDO  |      |                    | PGUP | HOME |   ^   | END  |       |       |
 // |DVORAK|  ALT  | CTRL | SHIFT |       | CAPS |PLAY PAUSE          | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
 // |      |  UNDO | CUT  | COPY  | PASTE |      |          |  |      |      |      |       |      |       |       |
 //                |      |       |       | DEL  | BSPC     |  |      |      |      |       |      |
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                     &trans     &trans      &trans   &trans    &trans   &trans
-&trans      &kp INS         &kp PSCRN       &kp C_AC_REDO   &kp K_CMENU     &trans                           &kp PG_UP  &kp HOME    &kp UP   &kp END   &trans   &trans
+&trans      &kp INS         &kp PSCRN       &kp K_CMENU     &kp C_AC_REDO   &trans                           &kp PG_UP  &kp HOME    &kp UP   &kp END   &trans   &trans
 &tog DVORAK &kp LALT        &kp LCTRL       &kp LSHFT       &trans          &kp CLCK                         &kp PG_DN  &kp LEFT    &kp DOWN &kp RIGHT &kp DEL  &kp BSPC
 &trans      &kp C_AC_UNDO   &kp C_AC_CUT    &kp C_AC_COPY   &kp C_AC_PASTE  &trans       &kp C_PP    &trans  &trans     &trans      &trans   &trans    &trans   &trans  
                          &trans       &trans       &trans       &kp DEL     &kp BSPC     &trans      &trans  &trans     &trans      &trans
