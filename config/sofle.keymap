@@ -14,6 +14,12 @@
 #define RAISE   3
 #define NUMPAD  4
 
+&lt {  // layer-tap config
+    flavor = "balanced";
+    tapping-term-ms = <100>;
+    quick-tap-ms = <100>;
+};
+
 / {
     behaviors {
         td_rs: tap_dance_right_space {
@@ -48,11 +54,6 @@
             bindings = <&lt LOWER SPACE>, <&kp SPACE>;
         };
 
-        &lt {  // layer-tap config
-            flavor = "balanced";
-            tapping-term-ms = <100>;
-            quick-tap-ms = <100>;
-        };
         
     };
     
