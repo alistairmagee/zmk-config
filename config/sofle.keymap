@@ -24,7 +24,7 @@
             bindings = <&kp SPACE>, <&mt RSHFT SPACE>;
         };
         
-        td_rr: tap_dance_right_raise{
+        td_rr: tap_dance_right_raise {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_RIGHT_RAISE";
             #binding-cells = <0>;
@@ -32,7 +32,7 @@
             bindings = <&lt RAISE BSPC>, <&kp BSPC>;
         };
         
-        td_ls: tap_dance_left_shift{
+        td_ls: tap_dance_left_shift {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LEFT_SHIFT";
             #binding-cells = <0>;
@@ -40,7 +40,7 @@
             bindings = <&kp LSHFT>, <&mo NUMPAD>;
         };
         
-        td_ll: tap_dance_left_lower{
+        td_ll: tap_dance_left_lower {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LEFT_LOWER";
             #binding-cells = <0>;
@@ -48,22 +48,10 @@
             bindings = <&lt LOWER SPACE>, <&kp SPACE>;
         };
 
-        ht_qt: hold_tap_quick_tap{
-            compatible = "zmk,behaviour-hold-tap";
-            label = "HOLD_TAP_QUICK_TAP";
-            #binding-cells = <2>;
+        &lt {  // layer-tap config
+            flavor = "balanced";
             tapping-term-ms = <100>;
             quick-tap-ms = <100>;
-            bindings = <&kp>, <&kp>;
-        };
-        
-        lt_qt: layer_tap_quick_tap{
-            compatible = "zmk,behaviour-hold-tap";
-            label = "LAYER_TAP_QUICK_TAP";
-            #binding-cells = <2>;
-            tapping-term-ms = <100>;
-            quick-tap-ms = <100>;
-            bindings = <&mo>, <&kp>;
         };
         
     };
@@ -83,7 +71,7 @@
 &kp TAB   &kp Q  &kp W      &kp E    &kp R     &kp T                              	    &kp Y            &kp U       &kp I     &kp O     &kp P    &kp BSLH
 &kp ESC   &kp A  &kp S      &kp D    &kp F     &kp G                              	    &kp H            &kp J       &kp K     &kp L     &kp SEMI &kp SQT
 &kp LSHFT &kp Z  &kp X      &kp C    &kp V     &kp B    &kp C_MUTE          &none   	    &kp N            &kp M       &kp COMMA &kp DOT   &kp FSLH &mt RSHFT RET
-                 &kp LCTRL  &kp LALT &kp LGUI  &td_ls   &lt_qt LOWER SPACE  &lt RAISE BSPC  &kp SPACE        &tog NUMPAD &kp RALT  &kp RCTRL
+                 &kp LCTRL  &kp LALT &kp LGUI  &td_ls   &lt LOWER SPACE     &lt RAISE BSPC  &kp SPACE        &tog NUMPAD &kp RALT  &kp RCTRL
             >;
            
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
