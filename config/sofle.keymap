@@ -33,7 +33,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LEFT_SHIFT";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             bindings = <&kp LSHFT>, <&mo NUMPAD>;
         };
 
@@ -41,7 +41,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LEFT_SHIFT_NUM_TOGGLE";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             bindings = <&kp LSHFT>, <&tog NUMPAD>;
         };
 
