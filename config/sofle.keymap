@@ -130,11 +130,11 @@
         };        lower_layer {
 // TODO: Some binds are waiting for shifted keycode support.
 // ---------------------------------------------------------------------------------------------------------------
-// |  F12  |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11     |
-// |  TAB  |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   \      |
-// |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |   9  |    0  |   |      |
-// | SHIFT |  `  |  ~  |  _   |   -  |  {([ |        |  |       |  })] |   +   |   =   |  :   |   \   | SHFT ENT | 
-//               |CTRL | ALT  | GUI  | SHFT |        |  |BSPC DL|ENTER |  ESC  |  ALT  | CTRL |
+// |  F12  |  F1 |  F2 |  F3  |  F4  |  F5  |                    |  F6  |  F7   |  F8   |  F9  |  F10  |  F11     |
+// |  TAB  |  !  |  @  |  #   |  $   |  %   |                    |  ^   |  &    |  *    |  (   |   )   |   \      |
+// |  ESC  |  1  |  2  |  3   |  4   |  5   |                    |  6   |   7   |   8   |   9  |    0  |   |      |
+// | SHIFT |  `  |  ~  |  _   |   -  |  {([ |RAISE TOG|  |       |  })] |   +   |   =   |  :   |   \   | SHFT ENT | 
+//               |CTRL | ALT  | GUI  | SHFT |         |  |BSPC DL|ENTER |  ESC  |  ALT  | CTRL |
             bindings = <
 &kp F12  &kp F1    &kp F2    &kp F3      &kp F4    &kp F5                       &kp F6    &kp F7        &kp F8          &kp F9    &kp F10   &kp F11
 &trans   &kp EXCL  &kp AT    &kp HASH    &kp DLLR  &kp PRCNT                    &kp CARET &kp AMPS      &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp BSLH
@@ -148,18 +148,18 @@
 
         raise_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |BTCLR |  BT1  | BT2  |  BT3  |  BT4  | USE BT |                    |      |      |       |      |       |       |
-// |GAMING|  INS  | PSCR | MENU  | REDO  | USE USB|                    | PGUP | HOME |   ^   | END  |       |       |
-// |DVORAK|  ALT  | CTRL | SHIFT |       | CAPS   |                    | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-// | SHFT |  UNDO | CUT  | COPY  | PASTE |        |PLAY PAUSE|  |      |      |      |       |      |       |       |
-//                | CTRL | ALT   | GUI   |SHFT NUM|  ALT     |  |      |      |      |       |      |
+// |BTCLR |  BT1  | BT2  |  BT3  |  BT4  | USE BT  |                    |      |      |       |      |       |       |
+// |GAMING|  INS  | PSCR | MENU  | REDO  | USE USB |                    | PGUP | HOME |   ^   | END  |       |       |
+// |DVORAK|  ALT  | CTRL | SHIFT |       | CAPS    |                    | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
+// | SHFT |  UNDO | CUT  | COPY  | PASTE |BTCLR ALL|RAISE TOG |  |      |      |      |       |      |       |       |
+//                | CTRL | ALT   | GUI   |SHFT NUM |  ALT     |  |      |      |      |       |      |
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &out OUT_BLE                     &none      &none       &none    &none     &none    &none 
-&tog GAMING &kp INS         &kp PSCRN       &kp K_CMENU     &kp C_AC_REDO   &out OUT_USB                     &kp PG_UP  &kp HOME    &kp UP   &kp END   &none    &none 
-&tog DVORAK &kp LALT        &kp LCTRL       &kp LSHFT       &none           &kp CLCK                         &kp PG_DN  &kp LEFT    &kp DOWN &kp RIGHT &kp DEL  &kp BSPC
+&bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &out OUT_BLE                       &none      &none       &none    &none     &none    &none 
+&tog GAMING &kp INS         &kp PSCRN       &kp K_CMENU     &C_AC_REDO      &out OUT_USB                       &kp PG_UP  &kp HOME    &kp UP   &kp END   &none    &none 
+&tog DVORAK &kp LALT        &kp LCTRL       &kp LSHFT       &none           &kp CLCK                           &kp PG_DN  &kp LEFT    &kp DOWN &kp RIGHT &kp DEL  &kp BSPC
 //&trans      &kp C_AC_UNDO   &kp C_AC_CUT    &kp C_AC_COPY   &kp C_AC_PASTE  &none        &kp C_PP    &none   &none      &none       &none    &none     &none    &none   
-&trans      &kp C_AC_UNDO   &kp C_AC_CUT    &kp C_AC_COPY   &kp C_AC_PASTE  &none        &tog RAISE    &none   &none      &none       &none    &none     &none    &none   
-                            &trans          &trans          &trans          &td_lsnt     &kp LALT    &none   &none      &none       &none    &none 
+&trans      &kp C_AC_UNDO   &kp C_AC_CUT    &kp C_AC_COPY   &kp C_AC_PASTE  &bt BT_CLR_ALL &tog RAISE  &none   &none      &none       &none    &none     &none    &none   
+                            &trans          &trans          &trans          &td_lsnt       &kp LALT    &none   &none      &none       &none    &none 
             >;
 
             sensor-bindings = <&inc_dec_kp C_NEXT C_PREV &inc_dec_kp PG_UP PG_DN>;
@@ -180,7 +180,7 @@
                     &trans   &trans    &trans    &tog NUMPAD &tog NUMPAD   &kp BSPC &kp SPACE    &kp KP_N0      &kp KP_DOT      &kp COMMA
             >;
 
-            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp BRI_UP BRI_DN>;
         };
 
 
