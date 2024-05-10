@@ -180,7 +180,7 @@
                     &trans   &trans    &trans    &tog NUMPAD &tog NUMPAD   &kp BSPC &kp SPACE    &kp KP_N0      &kp KP_DOT      &kp COMMA
             >;
 
-            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp BRI_UP BRI_DN>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
 
 
