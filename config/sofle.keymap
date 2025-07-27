@@ -175,13 +175,13 @@
 // ------------------------------------------------------------------------------------------------------------
 // |BTCLR |  BT1  | BT2  |  BT3  |  BT4  | USE BT  |                    |      |      |       |      |       |       |
 // |GAMING|       |      |       |       | USE USB |                    | PGUP | HOME |   ^   | END  |       |       |
-// |NO_NUM| MAC   |      |       |       |         |                    | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
+// |NO_NUM| MAC   |      |       |       | CAPS LK |                    | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
 // | SHFT |       |      |       |       |BTCLR ALL|RAISE TOG |  |      |      |      |       |      |       |       |
 //                | CTRL | ALT   | GUI   |SHFT NUM |  ALT     |  |      |      |      |       |      |
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &out OUT_BLE                       &none      &none       &none    &none     &none    &none 
 &tog GAMING &none           &none           &none           &none           &out OUT_USB                       &kp PG_UP  &kp HOME    &kp UP   &kp END   &none    &none 
-&tog NO_NUM &tog MAC        &none           &none           &none           &none                              &kp PG_DN  &kp LEFT    &kp DOWN &kp RIGHT &kp DEL  &kp BSPC
+&tog NO_NUM &tog MAC        &none           &none           &none           &kp CAPSLOCK                       &kp PG_DN  &kp LEFT    &kp DOWN &kp RIGHT &kp DEL  &kp BSPC
 &trans      &none           &none           &none           &none           &bt BT_CLR_ALL &tog RAISE  &none   &none      &none       &none    &none     &none    &none   
                             &trans          &trans          &trans          &td_lsnt       &kp LALT    &none   &none      &none       &none    &none 
             >;
