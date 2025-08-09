@@ -13,9 +13,10 @@
 #define NO_NUM  1
 #define MAC     2
 #define GAMING  3
-#define LOWER   4
-#define RAISE   5
-#define NUMPAD  6
+#define GAMING_ARROW  4
+#define LOWER   5
+#define RAISE   6
+#define NUMPAD  7
 
 &mt {  // mod-tap config
     flavor = "balanced";
@@ -140,19 +141,36 @@
 // |  TAB  |  T  |  Q  |  W   |  E   |  R      |                    |    Y       |  U    |  I    |  O   |   P   |   \      |
 // |  ESC  |  G  |  A  |  S   |  D   |  F      |                    |    H       |  J    |  K    |  L   |   ;   |   '      |
 // | SHIFT |  Z  |  X  |  C   |  V   |  B      |TURN OFF|  |        |    N       |  M    |  ,    |  .   |   /   | SHFT ENT |
-//               | CTRL| ALT  | CRTL | SPACE   | SHIFT  |  |RSE BSPC|   SPACE    |  DEL  | ALT   | CTRL |
+//               | CTRL| ALT  | CRTL | SPACE   | SHIFT  |  | ARROWS |   SPACE    |  DEL  | ALT   | CTRL |
             bindings = <
 &kp GRAVE &kp N1 &kp N2     &kp N3   &kp N4    &kp N5                             	        &kp N6           &kp N7      &kp N8    &kp N9    &kp N0   &kp BSPC
 &kp TAB   &kp T  &kp Q      &kp W    &kp E     &kp R                              	        &kp Y            &kp U       &kp I     &kp O     &kp P    &kp BSLH
 &kp ESC   &kp G  &kp A      &kp S    &kp D     &kp F                              	        &kp H            &kp J       &kp K     &kp L     &kp SEMI &kp SQT
 &kp LSHFT &kp Z  &kp X      &kp C    &kp V     &kp B     &tog GAMING         &none   	    &kp N            &kp M       &kp COMMA &kp DOT   &kp FSLH &mt RSHFT RET
-                 &kp LCTRL  &kp LALT &kp LCTRL &kp SPACE &kp LSHFT           &trans         &kp SPACE        &kp DEL     &kp RALT  &kp RCTRL
+                 &kp LCTRL  &kp LALT &kp LCTRL &kp SPACE &kp LSHFT           &tog GAMING_ARROW &kp SPACE        &kp DEL     &kp RALT  &kp RCTRL
             >;
            
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };        
 
-        lower_layer {
+        gaming_arrow_layer {
+//------------------------------------------------------------------------------------------------------------------------
+// |  `    |  1  |  2  |  3   |  4   |  5      |                    |    6 |  7   |  8   |  9    |   0  | BKSPC |
+// |  TAB  |  T  |  Q  |  W   |  E   |  R      |                    | PGUP | HOME |   ^  | END   |      |       |
+// |  ESC  |  G  |  A  |  S   |  D   |  F      |                    | PGDN |   <- |   v  |  ->   |      |       |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B      |TURN OFF|  |        |      |      |      |       |      |SHFT ENT
+//               | CTRL| ALT  | CRTL | SPACE   | SHIFT  |  |LETTERS |SPACE | CTRL | ALT  | CTRL |
+            bindings = <
+&kp GRAVE &kp N1 &kp N2     &kp N3   &kp N4    &kp N5                             	        &kp N6     &kp N7      &kp N8   &kp N9    &kp N0   &kp BSPC
+&kp TAB   &kp T  &kp Q      &kp W    &kp E     &kp R                              	        &kp PG_UP  &kp HOME    &kp UP   &kp END   &none    &none
+&kp ESC   &kp G  &kp A      &kp S    &kp D     &kp F                              	        &kp PG_DN  &kp LEFT    &kp DOWN &kp RIGHT &kp DEL  &kp BSPC
+&kp LSHFT &kp Z  &kp X      &kp C    &kp V     &kp B     &tog GAMING_ARROW   &none   	    &none      &none       &none    &none     &none    &mt RSHFT RET
+                 &kp LCTRL  &kp LALT &kp LCTRL &kp SPACE &kp LSHFT           &to GAMING     &kp SPACE  &kp RCTRL     &kp RALT  &kp RCTRL
+            >;
+           
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };        
+       lower_layer {
 // TODO: Some binds are waiting for shifted keycode support.
 // ---------------------------------------------------------------------------------------------------------------
 // |  F12  |  F1 |  F2 |  F3  |  F4  |  F5  |                    |  F6  |  F7   |  F8   |  F9  |  F10  |  F11     |
